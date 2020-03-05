@@ -49,7 +49,7 @@ Channel
  */
 process guppy_basecaller {
     cpus 16
-    conda '/home/dfornika/miniconda3/envs/artic-ncov2019'
+    conda 'artic-ncov2019'
 
     input:
     file(fast5_dir) from guppy_fast5_dir_ch
@@ -75,7 +75,7 @@ process guppy_basecaller {
  */
 process artic_gather {
     cpus 4
-    conda '/home/dfornika/miniconda3/envs/artic-ncov2019'
+    conda 'artic-ncov2019'
 
     input:
     val run_name from run_name_ch
@@ -101,7 +101,7 @@ process artic_gather {
  */
 process artic_demultiplex {
     cpus 8
-    conda '/home/dfornika/miniconda3/envs/artic-ncov2019'
+    conda 'artic-ncov2019'
 
     input:
     val run_name from run_name_ch
@@ -124,7 +124,7 @@ process artic_demultiplex {
  */
 process artic_minion {
     cpus 4
-    conda '/home/dfornika/miniconda3/envs/artic-ncov2019'
+    conda 'artic-ncov2019'
     publishDir "${params.outdir}/${sample_name}", mode: 'copy', pattern: "${sample_name}*"
     
     input:
